@@ -7,10 +7,7 @@ services:
     volumes:
       - dbdata:/var/lib/postgresql/data
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: dev
+    image: riggraz/astuto:latest
     environment:
       <<: *db-env
       BASE_URL: http://localhost:3000
